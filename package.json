@@ -1,0 +1,11 @@
+{
+  "name": "webbisivut",
+  "version": "1.0.0",
+  "description": "Responsiivinen  webbisivu",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "OR",
+  "license": "MIT"
+}
