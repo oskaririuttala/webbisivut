@@ -1,5 +1,5 @@
-@import "config.scss";
-@import "menu.scss";
+@import "config";
+@import "menu";
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 body {
   @include kotikuvatausta();
   background: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -71,3 +71,53 @@ main {
     }
   }
 }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "bioimage bio bio" "työ1 työ2 työ3";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: $secondary-color 3px solid;
+}
+
+.bio {
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+
+.työ-1 {
+  grid-area: työ1;
+  font-size: 0.9rem;
+}
+
+.työ-2 {
+  grid-area: työ2;
+  font-size: 0.9rem;
+}
+
+.työ-3 {
+  grid-area: työ3;
+  font-size: 0.9rem;
+}
+
+.työ {
+  background: lighten($primary-color, 5);
+  padding: 0.5rem;
+  border-bottom: $secondary-color 5px solid;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";
