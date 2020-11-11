@@ -5,13 +5,13 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  transition: all 0.6s ease-out; }
+  transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #fff;
-    transition: all 0.6s ease-out; }
+    transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -44,13 +44,13 @@
     background: #3e3e3e;
     list-style: none;
     transform: translate3d(0, -100%, 0);
-    transition: all 0.6s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #4b4b4b;
     transform: translate3d(0, 100%, 0);
-    transition: all 0.6s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
@@ -63,7 +63,7 @@
       border: solid 3px #5fd2ff; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
-    transition: all 0.6s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
@@ -77,7 +77,7 @@
     font-weight: 300;
     color: #fff;
     text-decoration: none;
-    transition: all 0.6s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
       color: #5fd2ff; }
 
@@ -153,7 +153,7 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #5fd2ff;
-        transition: all 0.6s ease-out; }
+        transition: all 0.5s ease-out; }
   main#koti {
     overflow: hidden; }
     main#koti h1 {
@@ -192,12 +192,49 @@ main {
   padding: 0.5rem;
   border-bottom: #5fd2ff 5px solid; }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; }
+  .projects img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.6;
+      border-color: #5fd2ff;
+      transition: all 0.5s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #5fd2ff;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #cbcbcb;
+  color: #333; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: #323232;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (min-width: 501px) and (max-width: 768px) {
   main {
@@ -225,8 +262,12 @@ main {
       height: 150px; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "työ1" "työ2" "työ3";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
+  main#koti h1 {
+    margin-top: 10vh; }
+  .projects {
+    grid-template-columns: 1fr; } }
